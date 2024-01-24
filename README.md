@@ -4,7 +4,7 @@
 Tôi thật sự đã rất buồn và tiếc thương người bạn Cheems vui vẻ của chúng ta, vì thế tôi muốn tạo ra một ứng dụng để chúng ta có thể nói chuyện với ngườ bạn trân quý này, và hoài niệm về một kí ức của chúng ta (2010-2023).
 
 ## Kiểm thử
-[Open It  (❁´◡`❁)](https://kyoo-147.github.io/LovingVincent)
+[Open It  (❁´◡`❁)](https://cheems-gpt.vercel.app/)
 
 <img src="https://i.imgur.com/PP7lnUm.png" width="500" height="auto" />
 
