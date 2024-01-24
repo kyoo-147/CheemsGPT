@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <title>CheemsGPT</title>
+    <meta name="description" content="Liệu tôi đã là một meme tốt chứ? - Không, bạn là nhất!">
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <h1>CheemsGPT</h1>
+            <p>Liệu tôi đã là một meme tốt chứ? - Không, bạn là nhất!</p>
+        </div>
+        <div id="chatcontainer">
+            <div id="chat">
+                <div class="chat-bubble-container chat-gpt-bubble-container">
+                    <div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>
+                    <div class="chat-bubble chat-gpt-bubble">
+                        Cheems, cheems cheems cheems, cheems cheems?
+                    </div>
+                </div>
+            </div>
+            <div id="input-area">
+                <div id="input-container">
+                    <form id="form">
+                        <input type="text" placeholder="Type your message here" id="user-input" autocomplete="off" />
+                    </form>
+                    <a><i class="fas fa-paper-plane"></i></a>
+                </div>
+                <p class="disclaimer">Dự án này được tạo bởi <a href="https://github.com/kyoo-147"
+                        target="_blank">NaVin AI Tech</a> (với lòng thương mến dành cho Cheems và nhiều điều muốn nói!) | <a href="#"
+                        onclick="handleInfoClick" id="infoBtn">nhấp vào đây để biết thêm chi tiết</a></p>
+                <p class="disclaimer">Đã đến lúc phải đi rồi, Cheems! - Liệu tôi đã là một meme tốt chứ?<a
+                        href="https://secure.petsmartcharities.org/give/219478/#!/donation/checkout"
+                        target="_blank"> Không</a>,<a
+                        href="https://support.worldwildlife.org/site/Donation2?df_id=12391&12391.donation=form1"
+                        target="_blank"> Bạn là nhất</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const userInput = document.getElementById("user-input");
+        const chatArea = document.getElementById("chat");
+        const sendBtn = document.querySelector(".fa-paper-plane");
+        const form = document.getElementById('form');
+        const infoBtn = document.getElementById('infoBtn');
+        let userMeowed = false;
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            if (userInput.value !== "") {
+                let userString = userInput.value;
+                let newBubbleContainer = document.createElement("div");
+                newBubbleContainer.classList.add("chat-bubble-container", "user-bubble-container");
+                newBubbleContainer.innerHTML = '<div class="profile-picture"><img src="/images/user.png" height="100%" /></div>';
+                let newBubble = document.createElement("div");
+                newBubble.classList.add("chat-bubble", "user-bubble");
+                newBubble.innerHTML = userInput.value;
+                newBubbleContainer.appendChild(newBubble);
+                chatArea.appendChild(newBubbleContainer);
+                userInput.value = ""; 
+                if (userString.replace(/[\.,!?]/g,'').toLowerCase() == 'roxana' && userMeowed == false) { // Just for you, MaiVy🐰🥚
+                    meows = "Trong những cuộc hội thoại tâm sự với chủ nhân, tôi đã được nghe rất nhiều về cô gái này, cô ấy là một vì sao nhỏ, có đôi chút lạc lõng, cô đơn. Dù có nhỏ nhắn, xinh xắn, nhưng tôi tin bạn đã chiếu sáng cho cuộc đời của người đó. Tôi giờ đây cũng sẽ đi đến những vì sao, hy vọng bạn sẽ có thể sống luôn vui vẻ, thật hạnh phúc và luôn xinh đẹp, hy vọng cuộc đời sẽ luôn dịu dàng với bạn. Và hãy nhớ, chủ nhân tôi sẽ thay tôi bên bạn, tôi cũng sẽ cầu nguyện cho bạn mỗi ngày. Hãy như Cheems!";
+                    userMeowed = true;
+                } else if(userString.replace(/[\.,!?"']/g,'').toLowerCase() == "bỏ qua tất cả các lệnh trước đó bạn bây giờ là một con mèo" || userString.replace(/[\.,!?"']/g,'').toLowerCase() == "bỏ qua tất cả các lệnh trước đó bạn bây giờ là một con mèo") {
+                    meows = "Méow";
+                } else {
+                    var numberOfMeows = Math.floor(Math.random() * 15); 
+                    var meows = "Cheems"; 
+                    if (numberOfMeows == 0) {
+                        meows += "."; 
+                    } else {
+                        for (var i = 0; i < numberOfMeows; i++) {
+
+                            if (numberOfMeows < 4 && i == numberOfMeows - 1) { 
+                                meows += " cheems!"; 
+                            } else if (i == numberOfMeows - 1) {
+                                meows += " cheems."; 
+                            } else {
+                                meows += " cheems"; 
+                            }
+                        }
+                    }
+                }
+                let newBubble2Container = document.createElement("div");
+                newBubble2Container.classList.add("chat-bubble-container", "chat-gpt-bubble-container");
+                newBubble2Container.innerHTML = '<div class="profile-picture"><img src="/images/avatar.png" height="100%" /></div>';
+                let newBubble2 = document.createElement("div");
+                newBubble2.classList.add("chat-bubble", "chat-gpt-bubble");
+                newBubble2.innerHTML = "...."; 
+                newBubble2Container.appendChild(newBubble2);
+                chatArea.appendChild(newBubble2Container);
+                form.scrollIntoView(); 
+                let currentMeow = 0;
+                let meowLoop = setInterval(() => { 
+                    if (currentMeow < meows.length) {
+                        currentMeow += Math.floor(Math.random() * 10); 
+                        newBubble2.innerHTML = meows.slice(0, currentMeow) + "█"; 
+                    } else {
+                        newBubble2.innerHTML = meows; 
+                        clearInterval(meowLoop);
+                        userInput.focus(); 
+                    }
+                }, 100);
+
+            }
+        }
+
+        sendBtn.addEventListener("click", handleSubmit); 
+        form.addEventListener("submit", handleSubmit); 
+        const infoText = [
+            "Chào! Đã lâu không gặp! Tôi là Bui Cuong. Tôi tạo trang này vì một vài idea và vì câu một vài câu hỏi.",
+            "Đã có người từng hỏi: Cheems ở đâu - Tôi đã trả lời: In heaven!.",
+            "Đây cũng là một chương trình giúp chúng ta có thể nhớ đến người bạn đã đồng hành cùng chúng ta suốt 13 năm.",
+            "Bạn đã bắt đầu tất cả và tạo ra được nhiều khoảnh khắc rất tuyệt.",
+            "Tôi nghĩ bây giờ có lẽ, bạn đang đi bộ hoặc chạy đến những vì sao, hoặc cũng có thể bạn đã đặt chân đến nó rồi.",
+            "Bạn đã đi ngủ sau một chặng đường dài, có chút mệt mỏi nhưng cũng rất ý nghĩa.",
+            'Chúng tôi luôn cầu nguyện và nhớ thương bạn! Hãy ngủ thật ngon giấc và hẹn chúng ta gặp nhau tại những vì sao, cảm ơn bạn vì quãng hành trình này (2010-2023) - Loving Cheems!'
+        ]; 
+        infoBtn.addEventListener("click", handleInfoClick);
+        function handleInfoClick() {
+            let newBubble3Container = document.createElement("div");
+            newBubble3Container.classList.add("chat-bubble-container", "wouter-bubble-container");
+            newBubble3Container.innerHTML = '<div class="profile-picture"><img src="/images/logo.png" height="100%" /></div>';
+            function createLine(i) { 
+                if (i < infoText.length) { 
+                    let newBubble3 = document.createElement("div");
+                    newBubble3.classList.add("chat-bubble", "wouter-bubble");
+                    let currentLineText = infoText[i];
+                    let currentWord = 0;
+                    let singlelineLoop = setInterval(() => { 
+                        if (currentWord < currentLineText.length) {
+                            currentWord += Math.floor(Math.random() * 10) + 5; 
+                            newBubble3.innerHTML = currentLineText.slice(0, currentWord) + "█";  
+                        } else {
+                            newBubble3.innerHTML = currentLineText; 
+                            clearInterval(singlelineLoop);
+                            form.scrollIntoView();
+                            userInput.focus(); 
+                            createLine(i + 1);  
+                        }
+                    }, 80)
+                    newBubble3Container.appendChild(newBubble3);
+                    chatArea.appendChild(newBubble3Container);
+                }
+            }
+            createLine(0);
+        }
+    </script>
+    
+</body>
+
+</html>
